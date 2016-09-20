@@ -75,7 +75,7 @@ class FirebaseObject {
    * \param optional path in the JSON object.
    * \return result as a Array.
    */
-   JsonVariant getNodeArray(const int = 0);
+   JsonVariant getNodeArray(const String& path = "");
 
   /**
    *
