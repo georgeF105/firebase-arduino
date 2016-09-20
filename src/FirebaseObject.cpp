@@ -85,6 +85,24 @@ JsonVariant FirebaseObject::getJsonVariant(const String& path) {
   return json;
 }
 
+JsonVariant FirebaseObject::getNodeArray(const int index) {
+  // String key(path);
+  // char* start = &key[0];
+  // char* end = start + key.length();
+  // // skip first `/`.
+  // if (*start == '/') {
+  //   start++;
+  // }
+  // char* arr[] = {"0","a","b"};
+  JsonObject json = json_.asObject();
+  for(JsonObject::iterator it=json.begin(); it!=json.end(); ++it) {
+
+  }
+  
+  //json = parseArray(json).asArray().get(index);
+  return json;
+}
+
 bool FirebaseObject::failed() const {
   return error_.length() > 0;
 }
