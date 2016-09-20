@@ -85,7 +85,7 @@ JsonVariant FirebaseObject::getJsonVariant(const String& path) {
   return json;
 }
 
-JsonVariant FirebaseObject::getNodeArray(const String& path) {
+JsonVariant FirebaseObject::convertToArray(const String& path) {
   JsonVariant variant = getJsonVariant(path);
   JsonVariant result = buffer_.createArray();
   int count = 0;

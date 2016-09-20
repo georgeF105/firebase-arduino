@@ -71,11 +71,12 @@ class FirebaseObject {
   JsonVariant getJsonVariant(const String& path = "");
 
   /**
-   * Return the children node keys as a Array.
+   * Returns an Object as an Array, sub objects that are objects get asigned
+   * a 'key' object with value of it's original key
    * \param optional path in the JSON object.
    * \return result as a Array.
    */
-   JsonVariant getNodeArray(const String& path = "");
+   JsonVariant convertToArray(const String& path = "");
 
   /**
    *
