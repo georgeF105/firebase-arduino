@@ -87,6 +87,10 @@ JsonVariant FirebaseObject::getJsonVariant(const String& path) {
 
 JsonVariant FirebaseObject::convertToArray(const String& path) {
   JsonVariant variant = getJsonVariant(path);
+  if (!variant.is<JsonObject>()) {
+    error_ = "failed to convert object to array - type error";
+    return false;
+  }
   JsonVariant result = buffer_.createArray();
   int count = 0;
   for(JsonObject::iterator it=variant.asObject().begin(); it!=variant.asObject().end(); ++it) {
